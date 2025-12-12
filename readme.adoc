@@ -1,5 +1,5 @@
 = LILYGO T5 4.7" Plus E-paper display based clock
 
-This repository contains a clock code, based on exellent
+This repository contains a clock code, based on excellent
 https://github.com/Xinyuan-LilyGO/LilyGo-EPD47 [LILYGO T5 4.7" Plus E-paper display]
 
