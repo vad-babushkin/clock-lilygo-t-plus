@@ -4,3 +4,5 @@ image::doc/clock-1.jpg[clock]
 This repository contains a clock code, based on excellent
 https://github.com/Xinyuan-LilyGO/LilyGo-EPD47 [LILYGO T5 4.7" Plus E-paper display]
 
+standalone version, without connect to home network (redis, mqtt, bonjour)
+
