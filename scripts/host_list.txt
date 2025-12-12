@@ -1,0 +1,14 @@
+Connected to Zabbix API Version 6.4.2
+10573   m5stack-fire
+10567   Arharius
+10586   xiaomi-router
+10585   esp32-pico-d4-clock
+10592   lilygo-t5-47-plus
+10591   m5stack-atom-s3
+10568   esp32-devkit-c-v4
+10084   Zabbix server
+10574   m5stack-stick
+10577   esp32-s3-devkit-c-1
+10572   m5stack-atom
+10578   esp32-s3-devkit-m-1
+10581   esp32-pico-d4

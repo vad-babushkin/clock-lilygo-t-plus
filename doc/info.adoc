@@ -1,0 +1,78 @@
+= РАЗНОЕ
+
+== Параметры шрифтов
+
+=== Битмаповый 200
+
+123456789A123456789B123456789C123456789D12345
+
+960/45=21.33
+
+=== LEFT 72b
+
+bounds x 0 y 150 xx 510 yy 150 x1 0  y1 149 w 501 h 121
+align x 0
+
+00:48
+
+W 501  (459)
+H 121
+
+GH 121 GW 100
+
+=== CENTER 48b
+
+bounds x 5 y 150 right_x 955   xx 345 yy 150 x1 5  y1 149 w 334 h 81
+align x 313
+
+W 334 (626)
+H 81
+
+GH 81 GW 67
+
+=== CENTER 24b
+
+bounds x 5 y 265 right_x 955   xx 209 yy 265 x1 5  y1 264 w 200 h 42
+align x 380
+
+GH 42 GW 33
+
+== REDIS
+
+=== список ключей
+
+[source, bash]
+----
+vad@ARHARIUS ~/Downloads/polit $ for k in `redis-cli -h 192.168.31.102 -p 6379 --scan --pattern  192.168.31.63/*`; do echo $k && redis-cli -h 192.168.31.102 -p 6379 GET $k; done
+192.168.31.63/session
+"{\"tick\":120,\"theme_id\":19}"
+192.168.31.63/bootCount
+"2"
+192.168.31.63/update
+"SLEEP"
+192.168.31.63/sensors
+"{\"temp\": 27, \"co2\": 519, \"hummidity\": 45}"
+----
+
+== PLATFORMIO.INI
+
+=== ARDUINO_USB_MODE, ARDUINO_USB_CDC_ON_BOOT
+[source, c]
+----
+    #if ARDUINO_USB_MODE
+    #if ARDUINO_USB_CDC_ON_BOOT//Serial used for USB CDC
+    extern HWCDC Serial;
+    #else
+    extern HWCDC USBSerial;
+    #endif
+    #endif
+----
+
+[source, c]
+----
+    #if ARDUINO_USB_CDC_ON_BOOT && !ARDUINO_USB_MODE //Serial used for USB CDC
+    USBCDC Serial(0);
+    #endif
+----
+
+So ARDUINO_USB_MODE can either be 0 or 1 (for either hardware USB-CDC or TinyUSB) but ARDUINO_USB_CDC_ON_BOOT must be 1.
